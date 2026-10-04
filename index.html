@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallo,Hi</title>
+</head>
+<body>
+    <header>
+        <h1>Hallo,Hi</h1>
+        <p>Internet + bellen van Hallo Hi</p>
+        <p>Kies uit sim only of een telefoon met abonnement <br>
+        van HalloHi en ontvang tijdelijk €145 voordeel.</p>
+
+        <button>Bekijk deal</button>
+        <button>Ontdek meer</button>
+
+    </header>
+    <main>
+
+    <section>
+        <form action="">
+            <p>Voornaam</p>
+            <input type="text" name="voornaam" pattern="[^0-9]+" title="Geen cijfers toegestaan" required>
+            <p>Achternaam</p>
+            <input type="text" name="achternaam" pattern="[^0-9]+" title="Geen cijfers toegestaan" required>
+            <!---------------------------------------------------------->
+            <p>Aanhef</p>
+            <input type="radio" name="Aanhef" value="Dhr." checked>Dhr.
+            <input type="radio" name="Aanhef" value="Mevr.">Mevr.
+            <input type="radio" name="Aanhef" value="Anders">Anders
+            <!---------------------------------------------------------->
+            <p>Straat met huisnummer</p>
+            <input type="text" name="straat" pattern="[A-Za-z\s\-]+\s[0-9]+[A-Za-z]?" title="Bijvoorbeeld: Stationsweg 12" placeholder="Stationsweg 12" required>
+            <p>Postcode</p>
+            <input type="text" name="postcode" pattern="[1-9][0-9]{3}\s?[A-Za-z]{2}" title="Formaat: 1234 AB" placeholder="1234 AB" maxlength="7" required>
+            <p>Woonplaats</p>
+            <input type="text" name="woonplaats" pattern="[^0-9]+" title="Geen cijfers toegestaan" required>
+            <p>Land</p>
+            <select name="land" required>
+                <option value="Nederland">Nederland</option>
+                <option value="België">België</option>
+                <option value="Duitsland">Duitsland</option>
+            </select>
+            <p>IBAN-nummer</p>
+            <input type="text" name="iban" pattern="NL[0-9]{2}[A-Z]{4}[0-9]{10}" title="Bijvoorbeeld: NL91ABNA0417164300" placeholder="NL91ABNA0417164300" maxlength="18" required>
+            <!---------------------------------------------------------->
+            <p>Type abonnement</p>
+            <input type="radio" name="abonnement" value="Mobiel" required>Mobiel
+            <input type="radio" name="abonnement" value="Glasvezel">Glasvezel
+            <input type="radio" name="abonnement" value="TV">TV
+            <!---------------------------------------------------------->
+            <p>Datum van ingang abonnement</p>
+            <input type="date" name="datum" id="datum" required>
+            <p>Looptijd abonnement</p>
+            <input type="text" name="looptijd" pattern="[0-9]+ maanden" title="Bijvoorbeeld: 12 maanden" placeholder="12 maanden" required>
+            <!---------------------------------------------------------->
+            <p>Aantal gebruikers op het abonnement</p>
+            <input type="number" name="gebruikers" min="1" max="4" required>
+            <!---------------------------------------------------------->
+            <p>E-mailadres</p>
+            <input type="email" name="email" required>
+            <p>Wachtwoord aanmaken</p>
+            <input type="password" name="wachtwoord" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Minimaal 8 tekens met een cijfer, een kleine letter en een hoofdletter" minlength="8" maxlength="20" required>
+            <!---------------------------------------------------------->
+            <br>
+            <button type="submit">Sluit abonnement af</button>
+        </form>
+    </section>
+    </main>
+
+    <script>
+        // datum mag niet in het verleden liggen
+        document.getElementById("datum").min = new Date().toISOString().split("T")[0];
+    </script>
+</body>
+</html>
